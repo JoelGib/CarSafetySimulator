@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool isSeatBeltOn = false;
     public bool canCrossRoad = false;
     private float distanceTravelled = 0;
+    private float seatBeltTimer = 10f;
 
     public bool isLanguageDefault = false; // 0: English, 1: Arabic
 
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]private AudioClip[] ArabicAudios;
     
 
-    [SerializeField]private int numberOfQuestions = 3;
+    // [SerializeField]private int numberOfQuestions = 3;
     
 
     [SerializeField]private GameObject BabySeat;
@@ -271,7 +272,7 @@ public class GameManager : MonoBehaviour
         PlaySpeechAudio(isLanguageDefault, 2);
         seatbeltSign.SetActive(true);
         isSeatBeltOn = true;
-        StartCoroutine(WaitForSec(getSpeechDuration(), FastenSeatbelts));
+        StartCoroutine(WaitForSec(getSpeechDuration() + seatBeltTimer, FastenSeatbelts));
 
     }
 

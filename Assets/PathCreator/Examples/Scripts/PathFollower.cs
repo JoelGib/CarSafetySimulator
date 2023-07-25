@@ -10,7 +10,7 @@ namespace PathCreation.Examples
         public PathCreator pathCreator;
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
-        [SerializeField]private Transform SteeringWheel = null;
+        // [SerializeField]private Transform SteeringWheel = null;
         float distanceTravelled;
         private InputMaster controls;
         private float direction;
